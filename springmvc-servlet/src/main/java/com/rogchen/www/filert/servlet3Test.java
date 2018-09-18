@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 /**
- * @Description: servlet3测试类
+ * @Description: servlet3新特性-异步线程
  * @Product: IntelliJ IDEA
  * @Author Rogchen rogchen128@gmail.com
  * @Created Date: 2018/8/24 16:13
@@ -37,6 +37,7 @@ public class servlet3Test extends HttpServlet{
     }
 }
 
+//异步线程等待
  class Executor implements Runnable {
     private AsyncContext ctx = null;
     public Executor(AsyncContext ctx){
