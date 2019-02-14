@@ -1,0 +1,3 @@
+title: java builder模式
+
+当实体存在多个构造函数使用builder模式来避免一个类出现过多构造函数，Java Builder模式主要是用一个内部类去实例化一个对象

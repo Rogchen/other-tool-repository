@@ -1,0 +1,2 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.ylzinfo.ms.dbUsercenter.configuration.SecondaryConfig,com.ylzinfo.ms.dbUsercenter.configuration.JpaDataSourceConfigUc
