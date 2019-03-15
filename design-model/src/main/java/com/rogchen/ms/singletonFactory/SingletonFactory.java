@@ -16,7 +16,7 @@ public class SingletonFactory {
     public static SingletonFactory getInstance() {
         if (singletonFactory == null) {
             synchronized (SingletonFactory.class) {
-                //防止在进入同步锁的时候 刚好实例初始化完成。
+//防止在进入同步锁的时候 刚好实例初始化完成。
                 if (singletonFactory == null) {
                     singletonFactory = new SingletonFactory();
                 }
