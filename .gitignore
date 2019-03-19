@@ -1,0 +1,16 @@
+.DS_Store
+.vscode
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+target/
+*.iml
+.idea
+.idea/
+.metadata
+.metadata/
+.recommenders
+.recommenders/
