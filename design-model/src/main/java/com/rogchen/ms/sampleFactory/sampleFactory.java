@@ -51,7 +51,9 @@ public class sampleFactory {
     }
 
     public static void main(String[] args) {
+        //单个方法
         getSay("1");
+        //通过反射
         Human h = getClass(Woman.class);
         h.say();
     }

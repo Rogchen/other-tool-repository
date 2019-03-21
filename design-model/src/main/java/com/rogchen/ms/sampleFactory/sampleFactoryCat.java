@@ -22,10 +22,25 @@ public class sampleFactoryCat {
     }
 
     /**
-     *  反射实现不写了
-     * @param args
+     *  反射实现
+     * @param cs
      */
-
+    public static CatKe getClass(Class<?> cs) {
+        CatKe h = null;
+        try {
+            h = (CatKe) Class.forName(cs.getName()).newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+            System.out.println("实例化errer");
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            System.out.println("get error");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("case error");
+        }
+        return h;
+    }
 
     /**
     * @Description 
@@ -36,6 +51,10 @@ public class sampleFactoryCat {
     **/
     public static void main(String[] args) {
         factory1("1");
+
+        CatKe ck = getClass(cat.class);
+        ck.setName("哈哈哈");
+        ck.tell();
     }
 
 }
