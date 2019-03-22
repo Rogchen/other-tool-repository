@@ -30,6 +30,13 @@ public class EncryptionController {
     }
 
 
+    /**
+    * @Description base64解密
+    * @Author Rogchen
+    * @Date 9:13 2019/3/22
+    * @Param [type, param]
+    * @Return java.lang.String
+    **/
     @GetMapping("decryption")
     public String decryptionByType(String type,String param){
         encryptionService.decryptionByType(type,param);

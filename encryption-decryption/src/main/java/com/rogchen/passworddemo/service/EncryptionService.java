@@ -2,7 +2,7 @@ package com.rogchen.passworddemo.service;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.rogchen.passworddemo.AesUtils;
+import com.rogchen.passworddemo.utils.AesUtils;
 import com.rogchen.passworddemo.InterimRedis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
