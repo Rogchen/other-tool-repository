@@ -1,0 +1,1 @@
+早版的tomcat使用的就是bio模式，所以bio写法就是tomcat的早期写法。
