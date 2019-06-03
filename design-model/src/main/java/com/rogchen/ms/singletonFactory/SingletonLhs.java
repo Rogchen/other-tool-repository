@@ -1,5 +1,8 @@
 package com.rogchen.ms.singletonFactory;
 
+import java.util.Date;
+import java.util.concurrent.CountDownLatch;
+
 /**
  * @Description: 单例模式-懒汉式[不可用]-线程不安全：初始化多线程调用时候产生多个实例
  * <p>
@@ -15,12 +18,31 @@ public class SingletonLhs {
 
     private static SingletonLhs instance;
 
-    private SingletonLhs (){}
+    private SingletonLhs() {
+    }
 
     public static SingletonLhs getInstance() {
         if (instance == null) {
+//            try {
+//                Thread.sleep(10);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             instance = new SingletonLhs();
         }
         return instance;
+    }
+
+    private static final CountDownLatch latch = new CountDownLatch(300);
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 300; i++) {
+            new Thread(() -> {
+                latch.countDown();
+                SingletonLhs lhs = SingletonLhs.getInstance();
+                System.out.println(lhs);
+                System.out.println(Thread.currentThread().getName()+"当前时间："+new Date().toLocaleString());
+            }).start();
+        }
     }
 }

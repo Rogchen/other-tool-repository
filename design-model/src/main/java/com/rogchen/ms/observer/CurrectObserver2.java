@@ -6,9 +6,9 @@ package com.rogchen.ms.observer;
  * @Author Rogchen rogchen128@gmail.com
  * @Created Date: 2019/4/23 11:33
  **/
-public class CurrectObserver implements Observer {
+public class CurrectObserver2 implements Observer {
     @Override
     public void response() {
-        System.out.println("具体观察者1作出反应！");
+        System.out.println("具体观察者2作出反应！");
     }
 }

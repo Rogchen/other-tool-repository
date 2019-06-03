@@ -1,4 +1,4 @@
-package com.rogchen.ms.structure.adapt.class_adapter;
+package com.rogchen.ms.structure.adapter.class_adapter;
 
 /**
  * @Description:

@@ -1,4 +1,4 @@
-package com.rogchen.ms.structure.adapt.interface_adapter;
+package com.rogchen.ms.structure.adapter.interface_adapter;
 
 /**
  * @Description: 定义一个抽象类实现接口的所有方法。

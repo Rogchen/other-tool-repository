@@ -2,7 +2,6 @@ package com.rogchen.ms.observer;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observer;
 
 /**
  * @Description: 抽象目标类

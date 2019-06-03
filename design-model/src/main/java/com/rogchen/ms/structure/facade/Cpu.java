@@ -7,4 +7,12 @@ package com.rogchen.ms.structure.facade;
  * @Created Date: 2019/5/6 16:59
  **/
 public class Cpu {
+
+    public void startup(){
+        System.out.println("cpu is begining startup");
+    }
+
+    public void shutdown(){
+        System.out.println("cpu is begining shutdown");
+    }
 }

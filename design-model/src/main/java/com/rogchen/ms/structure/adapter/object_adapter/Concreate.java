@@ -1,4 +1,4 @@
-package com.rogchen.ms.structure.adapt.object_adapter;
+package com.rogchen.ms.structure.adapter.object_adapter;
 
 /**
  * @Description:

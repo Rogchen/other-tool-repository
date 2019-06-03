@@ -1,5 +1,8 @@
 package com.rogchen.ms.singletonFactory;
 
+import java.util.Date;
+import java.util.concurrent.CountDownLatch;
+
 /**
  * @Description: 单例模式-双重检查[推荐用] 重点是volatile
  * 优点：线程安全；延迟加载；效率较高
@@ -25,11 +28,22 @@ public class SingletonFactory {
         return singletonFactory;
     }
 
-    public static void main(String[] args) {
-        SingletonFactory factory = SingletonFactory.getInstance();
-        System.out.println(factory);
-        SingletonFactory factory1 = SingletonFactory.getInstance();
-        System.out.println(factory1);
-    }
+//    public static void main(String[] args) {
+//        SingletonFactory factory = SingletonFactory.getInstance();
+//        System.out.println(factory);
+//        SingletonFactory factory1 = SingletonFactory.getInstance();
+//        System.out.println(factory1);
+//    }
+private static final CountDownLatch latch = new CountDownLatch(300);
 
+    public static void main(String[] args) {
+        for (int i = 0; i < 300; i++) {
+            new Thread(() -> {
+                latch.countDown();
+                SingletonFactory lhs = SingletonFactory.getInstance();
+                System.out.println(lhs);
+                System.out.println(Thread.currentThread().getName() + "当前时间：" + new Date().toLocaleString());
+            }).start();
+        }
+    }
 }

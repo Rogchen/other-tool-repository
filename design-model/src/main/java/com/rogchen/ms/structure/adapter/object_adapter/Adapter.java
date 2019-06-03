@@ -1,4 +1,4 @@
-package com.rogchen.ms.structure.adapt.object_adapter;
+package com.rogchen.ms.structure.adapter.object_adapter;
 
 /**
  * @Description: 必须先定义一个需要适配的类，可以通过定义一个统一标准接口来做适配

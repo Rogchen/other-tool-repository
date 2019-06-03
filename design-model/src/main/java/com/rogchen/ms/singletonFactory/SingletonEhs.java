@@ -14,9 +14,6 @@ public class SingletonEhs {
 
     private final static SingletonEhs INSTANCE = new SingletonEhs();
 
-    private SingletonEhs() {
-    }
-
     public static SingletonEhs getInstance() {
         return INSTANCE;
     }

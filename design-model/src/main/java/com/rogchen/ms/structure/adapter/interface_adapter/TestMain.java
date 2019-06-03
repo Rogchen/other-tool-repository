@@ -1,4 +1,4 @@
-package com.rogchen.ms.structure.adapt.interface_adapter;
+package com.rogchen.ms.structure.adapter.interface_adapter;
 
 /**
  * @Description:
