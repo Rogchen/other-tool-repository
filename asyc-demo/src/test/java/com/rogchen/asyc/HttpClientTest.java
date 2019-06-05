@@ -19,6 +19,9 @@ public class HttpClientTest {
         RestTemplate restTemplate = new RestTemplate();
         String ticketNo = restTemplate.getForEntity("http://localhost:9091/buyTicket?idNo=3",String.class).getBody();
         log.info("用户购买票是："+ticketNo);
+        log.info("使用异步控制器：============");
+        String tn = restTemplate.getForEntity("http://localhost:9091/asycBuyTicket?idNo=3",String.class).getBody();
+        log.info("用户异步购买票是："+tn);
     }
 
 }
