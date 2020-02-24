@@ -1,0 +1,11 @@
+#spring:
+#  application:
+#    name: xss
+#xss:
+#  filter:
+#    exclude:
+#      - .jpg
+#      - .png
+#      - .sjson
+#server:
+#  port: 8080
