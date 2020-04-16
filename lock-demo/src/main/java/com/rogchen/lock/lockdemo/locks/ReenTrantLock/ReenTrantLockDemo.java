@@ -10,11 +10,13 @@ import java.util.concurrent.locks.LockSupport;
 /**
  * @author Rogchen  rogchen128@gmail.com
  * @description: 可重入锁demo
+ * aqs核心操作volatile int state，先进先出（fifo）虚拟双向队列clh，线程记录。aqs使用cas对该同步状态进行原子操作维护其状态。
  * @product: IntelliJ IDEA
  * @create by 20-4-15 22:19
  **/
 public class ReenTrantLockDemo implements Lock {
 
+//    为什么使用Atomic 因为需要保证state的时候线程安全
     private static AtomicInteger state = new AtomicInteger(0);
     private Thread owerThread = null;
     private LinkedBlockingDeque<Thread> writerDeques = new LinkedBlockingDeque<>();
