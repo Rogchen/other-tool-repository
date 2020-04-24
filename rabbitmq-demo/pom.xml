@@ -8,10 +8,10 @@
         <version>2.1.13.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.rogchen.lock</groupId>
-    <artifactId>lock-demo</artifactId>
+    <groupId>com.rogchen.rabbitmq</groupId>
+    <artifactId>rabbitmq-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lock-demo</name>
+    <name>rabbitmq-demo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -19,6 +19,10 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -41,8 +45,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -51,6 +56,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
     </build>
