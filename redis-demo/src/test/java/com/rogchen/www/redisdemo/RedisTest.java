@@ -28,7 +28,7 @@ public class RedisTest {
                 .get()
 //                .addHeader("Content-Type", "application/json;charset=utf-8")
 //                .url("http://localhost:28081/imageChange/redis/2")
-                .url("http://localhost:18081/count/testcount")
+                .url("http://localhost:18081/count/iiiii")
 //                .url("https://www.lamajihua.com/temp/ReferrerShow/2145")
                 .build();
         if (request.isHttps()) {

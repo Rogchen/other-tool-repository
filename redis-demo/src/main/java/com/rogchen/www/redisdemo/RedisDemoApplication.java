@@ -48,19 +48,29 @@ public class RedisDemoApplication {
         int pv = Integer.valueOf(object.get("pv").toString());
         // long currentPvIndex = countTotalPv % (contentSize * pv) / pv;
         long index = (count % 10) / 2;
+        String listkey = id + ":" + type + ":" + pv;
         System.out.println("当前总数" + totalcount + ",当前访问次数：" + count + ",当前游标：" + index);
-        Object o = redisUtils.lGetByIndex(id, index);    //位置游标
         Map result = new HashMap();
+        Object o = redisUtils.lGetByIndex(listkey, index);    //位置游标
         if (o == null) {
-            return result;
+            o = resultObject(listkey, index);
         }
         result.put("result", true);
-        result.put("totalPv", totalcount+1);
+        result.put("totalPv", totalcount + 1);
         result.put("content", o);
         result.put("type", 2);
         return result;
     }
 
+
+    public synchronized Object resultObject(String listkey, long index) {
+        Object o = redisUtils.lGetByIndex(listkey, index);    //位置游标
+        if (o == null) {
+            addRedisList(listkey);   //将数据让放入redis
+            return redisUtils.lGetByIndex(listkey, index);    //位置游标 重新获取游标、
+        }
+        return o;
+    }
 
     private Map getObject(String id) {
         Map map = new HashMap();
@@ -80,6 +90,13 @@ public class RedisDemoApplication {
 //        }
 
         return increment;
+    }
+
+    public void addRedisList(String key) {
+        System.out.println("调用次数");
+        for (int i = 0; i < 5; i++) {
+            redisUtils.lPush(key, key + "_" + i);
+        }
     }
 
 }
