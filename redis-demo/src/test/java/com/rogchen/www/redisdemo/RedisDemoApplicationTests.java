@@ -1,13 +1,13 @@
-package com.rogchen.demo.sentineldemo;
+package com.rogchen.www.redisdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SentinelDemoApplicationTests {
+class RedisDemoApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
