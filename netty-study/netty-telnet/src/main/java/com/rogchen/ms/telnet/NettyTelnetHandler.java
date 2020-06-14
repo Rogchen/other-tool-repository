@@ -36,7 +36,7 @@ public class NettyTelnetHandler extends SimpleChannelInboundHandler<String> {
         String response;
         boolean close = false;
         if (request.isEmpty()) {
-            response = "Please type something.\r\n";
+            response = "Please say something.\r\n";
         } else if ("bye".equals(request.toLowerCase())) {
             response = "Have a good day!\r\n";
             close = true;

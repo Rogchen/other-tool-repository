@@ -45,7 +45,7 @@ public class NioStudy {
             Iterator<SelectionKey> iterator = selectionKeys.iterator();
             while (iterator.hasNext()) {
                 SelectionKey key = iterator.next();
-                //第一次改变选择器状态，第二次进入
+                //第一次注册一个新的channel到选择器并修改channel状态，第二次进入
                 if (key.isAcceptable()) {
                     ServerSocketChannel channel = (ServerSocketChannel) key.channel();
                     SocketChannel clientChannel = channel.accept();

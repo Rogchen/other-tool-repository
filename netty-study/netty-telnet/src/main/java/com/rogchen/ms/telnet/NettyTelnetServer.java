@@ -50,4 +50,13 @@ public class NettyTelnetServer {
         workerGroup.shutdownGracefully();
     }
 
+
+    public static void main(String[] args) {
+        NettyTelnetServer nettyTelnetServer = new NettyTelnetServer();
+        try {
+            nettyTelnetServer.openTelnet();
+        } catch (InterruptedException e) {
+            nettyTelnetServer.close();
+        }
+    }
 }
